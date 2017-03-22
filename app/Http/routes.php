@@ -20,6 +20,7 @@ Route::auth();
 Route::get('article/{id}','ArticleController@show');
 Route::get('/home', 'HomeController@index');
 Route::get('/community','CommunityController@index');
+Route::get('/community/{id}','CommunityController@show');
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {

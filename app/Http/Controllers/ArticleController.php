@@ -14,5 +14,4 @@ class ArticleController extends Controller
         return view('article/show')->withArticle(\App\Article::with('hasManyComments')->find($id));
     }
 
-
 }
