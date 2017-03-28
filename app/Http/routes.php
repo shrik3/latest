@@ -21,12 +21,17 @@ Route::get('article/{id}','ArticleController@show');
 Route::get('/home', 'HomeController@index');
 Route::get('/community','CommunityController@index');
 Route::get('/community/{id}','CommunityController@show');
+Route::get('/images', function () {
+    return 'denied';
+});
+
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/', 'HomeController@index');
     Route::resource('manage_comments','CommentController');
     Route::resource('article','ArticleController');
+    Route::resource('photo','PhotoController');
     }
 );
 
