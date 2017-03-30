@@ -18,6 +18,8 @@ class CreatePhotoTable extends Migration
             $table->string('title',400)->default('');
             $table->string('image',400)->default('');
             $table->timestamps();
+            $table->integer('owner_type');
+            $table->integer('owner_id');
         }
         );
     }
